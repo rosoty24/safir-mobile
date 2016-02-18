@@ -1,0 +1,23 @@
+<template name="forumDetail">
+	<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+	      <tr>
+	        <td>{{topic}}</td>
+	        <td>{{description}}</td>
+	        <td>{{date}}</td>
+	    	<td><a href="/forum/reply/{{_id}}"><button class="btn btn-primary">Reply</button></a></td>
+	      </tr>
+    </tbody>
+  </table>
+</div>
+
+</template>

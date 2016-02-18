@@ -1,0 +1,53 @@
+<template name="stock">
+    <div class="container">
+        <div class="listAllstore">
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        
+                        <th>RetailStoreName</th>
+                        <th>Barcode<i class="glyphicon glyphicon-arrow-down bacodeascending" style="font-size: 13px;opacity: 0.5;cursor: pointer;"></i><i class="glyphicon glyphicon-arrow-up bacodedescending" style="font-size: 13px;opacity: 0.5;cursor: pointer;"></i></th>
+                        <th>QTY<i class="glyphicon glyphicon-arrow-down qtyascending" style="font-size: 13px;opacity: 0.5;cursor: pointer;"></i><i class="glyphicon glyphicon-arrow-up qtydescending" style="font-size: 13px;opacity: 0.5;cursor: pointer;"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {{#each listsStock}}  
+                    <tr>
+                        <td class="hidden-phone">{{RetailStoreName}}</td>
+                        <td>{{Barcode}}</td>
+                        <td><input type="text" value="{{QTY}}" class="qty"/></td>
+                                            
+                       <!--  <td><a class="btn mini blue-stripe editstock" href=""><i class="glyphicon glyphicon-pencil"></i></a></td> -->
+
+                        <td><a href="#" class="deletestock"><i class="glyphicon glyphicon-trash"></i></a></td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+        <div>
+          <!--  <nav>
+          <ul class="pager">
+            <li><a href="#" class="prev">Previous</a></li>
+            <li><a href="#" class="next">Next</a></li>
+          </ul>
+        </nav> -->
+        <nav  class="text-center">
+          <ul class="pagination">
+            <li class="prev">
+                <span aria-hidden="true">&laquo;</span>
+            </li>
+            {{#each page}}
+            <li>
+                <span class="pageval" name="{{this}}">{{this}}</span>
+            </li>
+            {{/each}}
+            <li class="next">
+                <span aria-hidden="true">&raquo;</span>
+            </li>
+          </ul>
+        </nav>
+        </div>
+    </div>
+</template>
